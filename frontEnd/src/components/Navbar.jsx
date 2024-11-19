@@ -8,6 +8,7 @@ export const Navbar = () => {
   const userStatement = useSelector((state) => state.user.value);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const userInformations = useSelector((state) => state.user.informations);
 
   return (
     <>
@@ -30,7 +31,7 @@ export const Navbar = () => {
               }}
             >
               <FontAwesomeIcon icon={faCircleUser} />
-              Sign Out
+              {userInformations.userName}
             </button>
           ) : (
             <a className="main-nav-item" href="./sign-in">

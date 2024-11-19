@@ -24,6 +24,7 @@ export function Profile() {
       navigate("/error-user");
     }
   }, [userStatement, navigate]);
+  
   const getProfile = async () => {
     const request = await fetch(ENDPOINT, {
       method: "GET",
