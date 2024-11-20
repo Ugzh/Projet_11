@@ -16,23 +16,26 @@ export const Navbar = () => {
         <a className="main-nav-logo" href="/">
           <img
             className="main-nav-logo-image"
-            src="./img/argentBankLogo.png"
+            src="./img/argentBankLogo.webp"
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
         </a>
         <div>
           {userStatement ? (
-            <button
-              className="main-button-item"
-              onClick={() => {
-                dispatch(loggedOut());
-                navigate("/");
-              }}
-            >
-              <FontAwesomeIcon icon={faCircleUser} />
-              {userInformations.userName}
-            </button>
+            <>
+              <span>{userInformations.userName}</span>
+              <button
+                className="main-button-item"
+                onClick={() => {
+                  dispatch(loggedOut());
+                  navigate("/");
+                }}
+              >
+                <FontAwesomeIcon icon={faCircleUser} />
+                Sign out
+              </button>
+            </>
           ) : (
             <a className="main-nav-item" href="./sign-in">
               <FontAwesomeIcon icon={faCircleUser} />
